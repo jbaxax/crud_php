@@ -64,7 +64,7 @@
                             <td><?=$datos->fecha_nac ?></td>
                             <td><?=$datos->correo ?></td>             
                             <td>
-                                <a href="" class="btn btn-small btn-warning"><i class="fa-solid fa-pen-to-square"></i></a>
+                                <a href="modificar_persona.php?id=<?=$datos->id_persona?>" class="btn btn-small btn-warning"><i class="fa-solid fa-pen-to-square"></i></a>
                                 <a href="" class="btn btn-small btn-danger"><i class="fa-solid fa-trash"></i></a>
                             </td>
                         </tr>
