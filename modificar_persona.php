@@ -4,7 +4,7 @@ $id=$_GET["id"];
 
 $sql=$conexion->query("select * from persona where  id_persona=$id");
 
-var_dump($sql);
+
 ?>
 
 <!DOCTYPE html>
@@ -19,10 +19,10 @@ var_dump($sql);
 <body>
 <form class="col-4 p-3 m-auto" method="POST">
             <h3 class="text-center text-secondary p-3">Modificar de persona</h3>
-            <input type="text" name="id" value="<?= $_GET["id"] ?>">
+            <input type="hidden" name="id" value="<?= $_GET["id"] ?>">
             <?php
             include "controlador/modificar_persona.php";
-            while($datos=$sql->fetch_object()){ var_dump($_POST);?>
+            while($datos=$sql->fetch_object()){ ?>
                 <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Nombre de la persona</label>
                 <input type="text" class="form-control" name="nombre" value="<?= $datos->nombre ?>">  

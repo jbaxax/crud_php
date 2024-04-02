@@ -8,12 +8,24 @@
     <script src="https://kit.fontawesome.com/0503807a14.js" crossorigin="anonymous"></script>
 </head>
 <body>
+
+    <script>
+        function eliminar(){
+            var respuesta = confirm("Estas seguro que deseas eliminar");
+            return respuesta;
+        }
+    </script>
+
     <h1 class="text-center p-3">HOLA </h1>
+    <?php
+    include "modelo/conexion.php";
+    include "controlador/eliminar_persona.php"
+    ?>
     <div class="container-fluid row">
         <form class="col-4" method="POST">
             <h3 class="text-center text-secondary p-3">Registro de persona</h3>
             <?php
-            include "modelo/conexion.php";
+            
             include "controlador/registro_persona.php";
             ?>
             <div class="mb-3">
@@ -65,7 +77,7 @@
                             <td><?=$datos->correo ?></td>             
                             <td>
                                 <a href="modificar_persona.php?id=<?=$datos->id_persona?>" class="btn btn-small btn-warning"><i class="fa-solid fa-pen-to-square"></i></a>
-                                <a href="" class="btn btn-small btn-danger"><i class="fa-solid fa-trash"></i></a>
+                                <a onclick="return eliminar()" href="index.php?id=<?=$datos->id_persona?>" class="btn btn-small btn-danger"><i class="fa-solid fa-trash"></i></a>
                             </td>
                         </tr>
                     <?php }

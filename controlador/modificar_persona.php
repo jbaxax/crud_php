@@ -9,7 +9,7 @@ if(!empty($_POST["btnmodificar"])){
         $fecha=$_POST["fecha"];
         $correo=$_POST["correo"];
         
-        $sql=$conexion->query(" update persona set nombre='$nombre',apellido='$apellido',dni='$dni',fecha='$fecha',correo='$correo' where id_persona=$id ");
+        $sql=$conexion->query(" update persona set nombre='$nombre',apellido='$apellido',dni='$dni',fecha_nac='$fecha',correo='$correo' where id_persona=$id ");
 
         if($sql==1){
             header("location:index.php");

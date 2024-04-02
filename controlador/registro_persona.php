@@ -16,10 +16,12 @@ if(!empty($_POST["btnregistrar"])){
         }
     }else{
         echo '<div class="alert alert-warning">LLENA TODO</div>';
-    }
-
-}
-        
+    }?>
+        <!-- Evita error de Reenvio de Formulario -->
+        <script>
+            history.replaceState(null,null,location.pathname)
+        </script>
     
-
+<?php }
+        
 ?>
